@@ -90,7 +90,7 @@ def result():
     if model.predict(df1)[0] == 0:
         put_text("The link seems not malicious.")
     else:
-        put_text("link seems malicious.")
+        put_text("Link seems malicious.")
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
@@ -100,5 +100,5 @@ if __name__=='__main__':
     start_server(predict, port=args.port)
     
     
-app.add_url_rule('/tool','webio_view',webio_view(result),methods=['GET','POST','OPTIONS'])    
+#app.add_url_rule('/tool','webio_view',webio_view(result),methods=['GET','POST','OPTIONS'])    
 
