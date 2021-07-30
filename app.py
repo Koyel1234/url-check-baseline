@@ -93,7 +93,11 @@ def result():
         put_text("link seems malicious.")
 
 if __name__=='__main__':
-    result()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default-8080)
+    args = parser.parse_args()
+    
+    start_server(predict, port=args.port)
     
     
 app.add_url_rule('/tool','webio_view',webio_view(result),methods=['GET','POST','OPTIONS'])    
